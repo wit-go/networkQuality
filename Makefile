@@ -12,3 +12,12 @@ golines:
 clean:
 	go clean -testcache
 	rm -f *.o core
+
+apple:
+	./networkQuality --config mensura.cdn-apple.com --port 443 --path /api/v1/gm/config
+
+# makes a .deb package
+debian:
+	# you have to symlink this if you are building it from somewhere else
+	# ln -s ~/go/src/github.com/network-quality/goresponsiveness -> ../../go.wit.com/apps/networkQuality
+	~/go/bin/go-deb --ldflags "$(PKG)/utilities.GitVersion=$(GIT_VERSION)" --no-gui --repo go.wit.com/apps/networkQuality

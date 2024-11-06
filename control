@@ -1,0 +1,12 @@
+Source: networkQuality
+Build-Depends: golang
+Package: networkQuality
+Maintainer: Jeff Carr <jcarr@wit.com>
+Architecture: amd64
+Recommends:
+Depends:
+URL: https://github.com/network-quality/goresponsiveness
+Description: does a speed test of your internet connection
+ To test against apple.com:
+    networkQuality --config mensura.cdn-apple.com --port 443 --path /api/v1/gm/config
+ This is a debian package of: https://github.com/network-quality/goresponsiveness
