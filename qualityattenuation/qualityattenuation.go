@@ -200,7 +200,7 @@ func (qa *SimpleQualityAttenuation) Merge(other *SimpleQualityAttenuation) error
 		qa.latencyEqLossThreshold != other.latencyEqLossThreshold {
 		return fmt.Errorf("merge quality attenuation values with different offset or latency_eq_loss_threshold")
 	}
-	for _, centroid := range other.empiricalDistribution.Centroids() {
+	for _, centroid := range other.empiricalDistribution.Centroids(nil) {
 		mean := centroid.Mean
 		weight := centroid.Weight
 		qa.empiricalDistribution.Add(mean, weight)
