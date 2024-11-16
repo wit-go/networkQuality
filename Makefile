@@ -5,6 +5,10 @@ LDFLAGS      := -ldflags "-X $(PKG)/utilities.GitVersion=$(GIT_VERSION)"
 all: build test
 build:
 	go build $(LDFLAGS) networkQuality.go
+
+install:
+	go install $(LDFLAGS)
+
 test:
 	go test ./timeoutat/ ./traceable/ ./utilities/ ./lgc ./qualityattenuation ./rpm ./series
 golines:
